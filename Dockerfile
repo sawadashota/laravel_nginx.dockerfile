@@ -14,10 +14,10 @@ RUN yum -y update \
 	&& yum -y update nginx-release-centos \
 	&& yum -y --enablerepo=nginx install nginx \
 	&& systemctl enable nginx \
-# Install PHP7.1
+# Install PHP7.2
 	&& rpm --import https://rpms.remirepo.net/RPM-GPG-KEY-remi \
 	&& yum install yum-utils https://rpms.remirepo.net/enterprise/remi-release-7.rpm -y \
-	&& yum-config-manager --enable remi-php71 \
+	&& yum-config-manager --enable remi-php72 \
 	&& yum -y install php php-fpm php-intl php-mbstring php-xml php-pdo php-mysqlnd php-opcache php-mcrypt php-gd php-devel php-zip php-pgsql \
 	&& yum install -y php-pear \
 	&& pecl install imagick \
